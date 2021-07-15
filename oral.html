@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="download.ico">
+    <title>11-STEM 1st Sem</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(255, 255, 255);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create a column layout with Flexbox */
+.row {
+  display: flex;
+}
+
+/* Left column (menu) */
+.container {
+  flex: 15%;
+  padding: 15px 0;
+}
+
+.container h2 {
+  padding-left: 8px;
+}
+
+/* Right column (page content) */
+.right {
+  flex: 65%;
+  padding: 15px;
+}
+
+#myInput {
+  background-image: url('https://www.kindacode.com/wp-content/uploads/2020/12/search.png');
+  background-size: 20px;
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  position:sticky;
+}
+
+/* Style the navigation menu inside the left column */
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid rgb(156, 181, 218);
+  margin-top: -1px;
+  margin-right: 5px;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: rgb(169, 225, 241);
+}
+
+.title h2 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.row .container a {
+  color: black;
+  text-decoration: none;
+}
+
+.title h2 a {
+  color: black;
+  text-decoration: none;
+}
+.row .container h2 a:hover {
+  background: #225d85;
+  cursor: pointer; 
+
+  transition: background .1s;  
+}
+</style>
+</head>
+<body>
+<div class="title">
+  <img src="https://yetiacademy.com/wp-content/uploads/2020/06/STEM-Education.jpg" width="150px" height="65px" align="left">
+  <h2><a href="index.html">ㅤ11-STEM: Class Documentation</a></h2>
+  <hr><hr>
+  <br>
+</div>
+<div class="row">
+  <div class="container" style="background-color:rgb(156, 181, 218);">
+    <h2><a href="index.html">Return</a></h2>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search ..." title="Type in a name">
+    <ul id="myUL">
+      <li><a href="ES8-2.html">8/2</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+    </ul>
+  </div>
+  
+  <div class="right" style="background-color:rgb(255, 255, 255);">
+    <h2>Earth Science</h2>
+    <p></p>
+  </div>
+</div>
+
+<script>
+    function myFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+    </script>
+    
+
+</body>
+</html>
